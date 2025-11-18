@@ -1,0 +1,241 @@
+<html>
+    <div class = "pg">
+        <div class = "top">
+            <h1>Rock, Paper, Scissors</h1>
+            <div class="buttons" id="mainpage">
+            <button>Profile</button>
+        </div>
+        </div>
+        <div class = "one">
+            <div>
+                <input class = "text" type="text" id="usernameInput" placeholder="Enter your name">
+            </div>
+            <div>
+                <button class = "button" id = "usernameButton">Enter</button>
+            </div>
+        </div>
+        <div class = "img">
+            <div class="hand-container">
+            <img id="playerHand" class="hand grey" src="images/grey.png" alt="Player Hand">
+            <img id="computerHand" class="hand grey" src="images/grey.png" alt="Computer Hand">
+        </div>
+
+        <div style="text-align:center; margin-top:5%;">
+            <input type="text" id="playerChoice" placeholder="Enter rock, paper, or scissors" style="width:30%; padding:1%; border: 0;             
+            border-top-left-radius: 5%;  
+            border-bottom-left-radius: 5%;
+            outline: none; 
+            background-color: white;">
+            <button id="playButton" class = "button2">Play</button>
+        </div>
+
+
+        </div>
+        <div class="rules">
+            <h2>Read Me!</h2>
+            This is my first project, if you try to break the code/test it, it will probably break.<br>
+            If the code breaks, then refresh the page and start over, this saves nothing permanently<br>
+            If refreshing doesn't work, well atleast my page is deployed and the buttons mostly work.<br>
+            If this looks weird or ugly on your screen, I'll do a better job, next time<br>
+            The right side is your hand, left side is the computers<br>
+            username does nothing as of now.
+        
+        </div>
+        <footer class = "masterclass">
+        <div class = "footer">
+            <p style = "color : white;">3 of my python projects are linked here, haven't uploaded the rest yet <br> <a href="https://github.com/Nitsthecoder/Python-/commit/74a55c12b4ea9f1e30ceb50e5e60eb4d380854a7" style = "color : white;">notsoimpressivepythonprojects</a>.</p>
+        </footer>
+        </div>
+
+    <style>
+        .buttons{
+            display: flex;
+            gap: 1%;          
+            align-items: center;
+            width: 10%;
+        }
+        .buttons button {
+            padding: 10% 15%;
+            font-weight: 600;
+            font-size: 100%;
+            border: none;
+            border-radius: 30%;
+            background-color: rgb(188, 221, 207); 
+            cursor: pointer;
+            transition: 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .buttons button:hover {
+            background: rgb(125, 174, 154);
+            transform: translateY(-5%);
+            box-shadow: 0 6% 12% rgba(0, 0, 0, 0.15);
+        }
+        .pg{
+            background-color: rgb(188, 221, 207);
+            width : 100%;
+        }
+        .rules{
+            font-size: small;
+            padding : 3%;
+            padding-top: 0.5%;
+            align-items: center;
+        }
+        .top{
+            justify-content: center;
+            height : 8%;
+            align-items: center;
+            margin : 0;
+            background-color:rgb(69, 117, 89);
+            text-align: center;
+            margin: 0;
+            padding: 0.5%;
+            display :flex;
+            gap : 1%;
+            justify-content: space-between;  
+            align-items: center;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            color : white;
+        }
+        .one{
+            justify-content: center;
+            display : flex;
+            padding : 3%;
+            padding-bottom: 0.5 ;
+            align-items: center;
+            height : 5%;
+            width : 100%;
+            align-items: center;
+        }
+        .text {
+            width: 100%;             
+            padding: 5% 3%;            
+            font-size: 1.2vw;   
+            border: 0;             
+            border-top-left-radius: 5%;  
+            border-bottom-left-radius: 5%;
+            outline: none;
+            box-shadow: 0 0 1% rgba(0,0,0,0.2);
+        }
+        .button {
+            width: 140%;             
+            padding: 25% 7%;
+            font-size: 1.2vw;
+            border: 0;
+            border-top-right-radius: 5%;
+            border-bottom-right-radius: 5%;
+            background-color: rgb(69,117,89);
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .button:hover {
+            background-color: rgb(50,90,70);
+        }
+        .hand-container {
+            display: flex;
+            justify-content: center;
+            gap: 5%;
+            margin-top: 5%;
+        }
+
+        .hand {
+            width: 20%;               
+            transition: filter 0.3s ease, transform 0.5s ease;
+        }
+
+        .button2{
+            padding:1% 2%; border-top-right-radius: 5%;
+            border-bottom-right-radius: 5%;
+            background-color: rgb(69,117,89);
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+            border: 0;
+        }
+
+        .button2:hover {
+            background-color: rgb(50,90,70);
+        }
+        .footer{
+            padding : 3%;
+            padding-top : 0.5%;
+            background-color: rgb(50,90,70);
+        }
+    </style>
+    <script>
+
+        document.getElementById("mainpage").addEventListener("click", function () {
+            window.location.href = "deployed_webpage.html";  
+        });
+
+        let a = 0;
+        let b = 0;
+        const resultDisplay = document.getElementById("result");
+
+        const usernameInput = document.getElementById("usernameInput");
+        const usernameButton = document.getElementById("usernameButton");
+
+        function saveName() {
+        const name = usernameInput.value;
+        console.log("Username:", name);
+        }
+
+        usernameButton.addEventListener("click", saveName);
+        usernameInput.addEventListener("keydown", function(event){
+        if(event.key === "Enter") saveName();
+        });
+
+        // Player hand updating
+        const playerHand = document.getElementById("playerHand");
+        const playerChoiceInput = document.getElementById("playerChoice");
+        const playButton = document.getElementById("playButton");
+        let chand = [Math.floor(Math.random() * 3)];
+        function showPlayerHand() {
+        const hand = playerChoiceInput.value.toLowerCase();
+        if(!["rock", "paper", "scissors"].includes(hand)) {
+            alert("Please enter rock, paper, or scissors");
+            return;
+        }
+        playerHand.src = "images/" + hand + ".png";
+        let comhand = ["rock", "paper", "scissors"][chand];
+        computerHand.src = "images/" + comhand + ".png";
+        a++;
+        chand = chand + a;
+        chand = chand % 3;
+        
+
+        let w, w2;
+        if (hand == comhand){
+            a = a+5
+            b = b+5
+        }
+        else if ([hand,comhand] == ["rock", "scissors"] || ["scissors", "paper"] || ["paper","rock"])
+        {
+            a = a+ 10;
+        }
+        else{
+            b = b + 10;
+        }
+
+        if ( a > b){
+            w2 = " you win!";
+        }
+        else if ( a == b){
+            w2 = " it's a tie";
+        }
+        else{
+            w2 = " computer wins!"
+        }
+        w = name + " gets " + a + " points. computer gets " + b + " points.";
+        }
+
+        playButton.addEventListener("click", showPlayerHand);
+
+        playerChoiceInput.addEventListener("keydown", function(event){
+            if(event.key === "Enter") showPlayerHand();
+        }
+    );
+  </script>
+</html>
+

@@ -1,0 +1,160 @@
+<html>
+    <div class = "pg">
+    <div class = "top">
+        <div class = "text1">
+            <h1>
+            My Profile
+            </h1>
+        </div>
+        <div class="buttons" id="projectsBtn">
+            <button>Projects</button>
+        </div>
+        <div class="buttons" id="About">
+            <button>About</button>
+        </div>
+        <div class="buttons" id="Contact">
+            <button>Contact</button>
+        </div>
+    </div>
+    <div class = "masterdiv">
+        <div class = "heading">
+            <h1>
+            Hello There,<br>
+            Fellow Senior.
+            </h1>
+            <h2>
+                I'm Nithila
+            </h2>
+        <p>
+            I'm sorry, I hope this is what you were looking for, I couldn't listen to mondays meet, I was sick.
+        </p>
+        </div>
+        <div class = "pic">
+            <img src ="images/pfp.png" alt = "profile picture" >
+        </div>
+    </div>
+
+    <footer class = "masterclass">
+        <div class = "footer">
+            <h3>Experience and Skills</h3>
+            <p>
+                little experience in coding, specifically C++ and python,can do oops, currently improving my coding skills and learning java.<br>
+                Web development: this profile page<br>
+            </p>
+            </div>
+            <div class = "footer">
+            <h3>About Me</h3>
+            <p>
+                First year student at RVCE<br>
+                Branch : Core CSE
+            </p>
+            </div>
+        </footer>
+        </div>
+    <style>
+        body {
+            margin: 0;
+            background: linear-gradient(135deg, #FDE2E4, #E2ECE9);
+        }
+
+        .buttons{
+            display: flex;
+            gap: 1%;          
+            align-items: center;
+            width: 10%;
+        }
+        .buttons button {
+            padding: 10% 15%;
+            font-weight: 600;
+            font-size: 100%;
+            border: none;
+            border-radius: 30%;
+            background: #ffe8f3; 
+            cursor: pointer;
+            transition: 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .buttons button:hover {
+            background: #ffbed4;
+            transform: translateY(-5%);
+            box-shadow: 0 6% 12% rgba(0, 0, 0, 0.15);
+        }
+        .text1{
+            align-items: right;
+            padding-right: 0%;
+            width: 60%;
+        }
+        .pic {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pic img {
+            width: 220px;           
+            height: 220px;
+            border-radius: 50%;    
+            object-fit: cover;     
+            border: 3px solid #eee;
+        }
+        .heading{
+            width : 30%;
+            height : 100%; 
+            background-color: rgb(255, 238, 246);
+            padding : 2%;
+            padding-top: 1%;
+            align-items: right;
+            border-radius: 20%;
+        }
+        .top{
+            text-align: center;
+            margin: 0;
+            padding: 0.5%;
+            background-color:rgb(219, 109, 109);
+            display :flex;
+            gap : 1%;
+            justify-content: space-between;  
+            align-items: center;
+        }
+        .masterdiv{
+            background: linear-gradient(135deg, #FDE2E4, #E2ECE9);
+            gap : 15%;
+            align-items : right;
+            height : 40%;
+            display : flex;
+            padding : 5%;
+        }
+        .pg{
+            min-height: 100vh; 
+            width: 100%;
+        }
+
+        .masterclass{
+            background: rgb(219, 109, 109);
+            color: white;
+            text-align: center;
+            padding: 1.5%;
+            margin-top: 0%;
+            font-size: 90%;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+
+        .footer{
+            padding : 3%;
+            padding-top : 0.5%;
+        }
+    </style>
+    <script>
+        document.getElementById("projectsBtn").addEventListener("click", function () {
+            window.location.href = "project.html";  
+        });
+        document.getElementById("About").addEventListener("click", function () {
+            window.location.href = "about.html";  
+        });
+        document.getElementById("Contact").addEventListener("click", function () {
+            window.location.href = "contact.html";  
+        });
+    </script>
+
+</html>
